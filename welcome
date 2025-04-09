@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>미궁게임 - 문제 1</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      text-align: center;
+      padding: 3rem;
+      background-color: #f9f9f9;
+    }
+    .container {
+      max-width: 600px;
+      margin: 0 auto;
+      background: white;
+      padding: 2rem;
+      border-radius: 1rem;
+      box-shadow: 0 0 20px rgba(0,0,0,0.1);
+    }
+    input[type="text"] {
+      padding: 0.5rem;
+      width: 80%;
+      font-size: 1rem;
+      margin-top: 1rem;
+    }
+    button {
+      margin-top: 1rem;
+      padding: 0.5rem 1rem;
+      font-size: 1rem;
+    }
+    .error {
+      color: red;
+      margin-top: 1rem;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>문제 1</h2>
+    <p>여기에 문제 내용을 작성해주세요.</p>
+    
+    <input type="text" id="answerInput" placeholder="정답을 입력하세요" />
+    <br />
+    <button onclick="checkAnswer()">제출</button>
+    
+    <div class="error" id="errorText">정답이 아닙니다. 다시 시도해주세요.</div>
+  </div>
+
+  <script>
+    function checkAnswer() {
+      const input = document.getElementById('answerInput').value.trim().toLowerCase();
+      const correct = '정답예시'; // 정답은 여기 입력
+
+      if (input === correct) {
+        window.location.href = `${correct}.html`; // 정답 입력 시 이동
+      } else {
+        document.getElementById('errorText').style.display = 'block';
+      }
+    }
+  </script>
+</body>
+</html>
